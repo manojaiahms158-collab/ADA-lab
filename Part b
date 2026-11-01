@@ -1,0 +1,22 @@
+def dfs(graph, start):
+ visited = set()
+ stack = [start]
+ while stack:
+ vertex = stack.pop()
+ if vertex not in visited:
+ visited.add(vertex)
+ print(vertex, end=" ") 
+ for neighbor in graph[vertex]:
+ if neighbor not in visited:
+ stack.append(neighbor)
+ return visited
+graph = {
+ 'A': ['B', 'C'],
+ 'B': ['D', 'E'],
+ 'C': ['F'],
+ 'D': [],'E': ['F'],
+ 'F': []
+}
+start_vertex = 'A'
+print("Depth-First Search traversal:")
+dfs(graph, start_vertex)
