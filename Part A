@@ -1,0 +1,12 @@
+node = int(input("Enter the number of nodes"))
+adj_matrix = []
+for i in range(node):
+ row = [0]*node
+ adj_matrix.append(row)
+for i in range(node):
+ data = input(f"Enter the outgoing vertices for vertex {i}:") 
+ for j in data.split():
+ adj_matrix[i][int(j)] = 1
+print("\nAdjacency Matrix:")
+for row in adj_matrix:
+ print(*row)
